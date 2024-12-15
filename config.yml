@@ -1,0 +1,112 @@
+title: "Picoma"
+theme: ["PaperMod"]
+paginate: 5
+baseURL: https://picoma.github.io/
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+defaultContentLanguage: fr
+defaultContentLanguageInSubdir: false
+languages:
+  fr:
+    languageName: "🇫🇷"
+    languageCode: "fr"
+    weight: 1
+    params:
+      dateformat: "2 January 2006"
+      profileMode:
+        title: Le blog de Picoma
+        subtitle: <TODO subtitle>
+        buttons:
+          - name: Archive
+            url: "/archives"
+          - name: Blog
+            url: "/posts"
+    menu:
+      main:
+        - name: "🔎 Recherche"
+          url: /search
+          weight: 10
+        - name: "Categories"
+          identifier: categories
+          url: /categories/
+          weight: 20
+        - name: "Tags"
+          identifier: tags
+          url: /tags/
+          weight: 30
+        - name: "Archives"
+          identifier: tags
+          url: /archives
+          weight: 40
+  en:
+    languageName: "🇬🇧"
+    languageCode: "en"
+    weight: 2
+    params:
+      profileMode:
+        title: Picoma's ???
+        subtitle: "A small place, right around the Boulevard's corner."
+        buttons:
+          - name: Archive
+            url: "/en/archives"
+          - name: Blog
+            url: "/en/posts"
+    menu:
+      main:
+        - name: "🔎 Search"
+          url: /en/search
+          weight: 10
+        - name: "Categories"
+          identifier: categories
+          url: /en/categories/
+          weight: 20
+        - name: "Tags"
+          identifier: tags
+          url: /en/tags/
+          weight: 20
+        - name: "Archives"
+          identifier: tags
+          url: /en/archives
+          weight: 40
+
+
+params:
+  env: production
+
+  profileMode:
+    enabled: true
+    imageUrl: "<image link>" # optional
+    imageTitle: "<title of image as alt>" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+
+  socialIcons: # optional
+    - name: "Linkedin"
+      url: "https://linkedin.com/picoma"
+    - name: "Github"
+      url: "https://github.com/Picoma"
+    - name: Email
+      url: "pierre.hanz@gmail.com"
+  
+  displayFullLangName: true
+  ShowPageNums: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
